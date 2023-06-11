@@ -9,7 +9,7 @@ pipeline{
         }
          stage("push image to DockerHub"){
             steps{
-                docker.withRegistry([credentialsId: "docker-hub" , url: ""]){
+                withDockerRegistry([credentialsId: "docker-hub" , url: ""]){
                      sh 'docker build -t good777lord/jendonimag:""$Build_ID""'
 
                 }
