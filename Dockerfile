@@ -1,3 +1,7 @@
-FROM Ubutun:20.04
-RUN for user in ayeni; do userid $userid; echo "1234" | passwd $user --stdin; done
-RUN apt update && apt-y install mysql
+FROM alpine:latest
+
+RUN  echo "Must be root to run this script." 
+EXPOSE 3000
+RUN echo "server running $PORT"
+
+
