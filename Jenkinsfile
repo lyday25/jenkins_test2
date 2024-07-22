@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage("Build docker"){
+        stage("Build docker on going"){
             steps{
                 sh 'printenv'
                 sh 'git version'
