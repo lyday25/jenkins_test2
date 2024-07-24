@@ -5,7 +5,7 @@ pipeline{
             steps {
                 script {
  
-                    git branch: 'main', url: 'https://github.com/clement2019/jenkins-test.git' 
+                    git branch: 'master', url: 'https://github.com/clement2019/jenkins-test.git' 
                 }
             }
         }
