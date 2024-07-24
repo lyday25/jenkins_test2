@@ -4,8 +4,8 @@ pipeline{
          stage("GitHub checkout") {
             steps {
                 script {
- 
-                    git branch: 'main', url: 'https://github.com/lyday25/jenkins_test2.git' 
+ //clone the master git
+                    git branch: 'master', url: 'https://github.com/lyday25/jenkins_test2.git' 
                 }
             }
         }
