@@ -5,7 +5,7 @@ pipeline{
             steps {
                 script {
  
-                    git branch: 'master', url: 'https://github.com/clement2019/jenkins-test.git' 
+                    git branch: 'main', url: 'https://github.com/lyday25/jenkins_test2.git' 
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline{
             steps{
                 sh 'printenv'
                 sh 'git version'
-                sh 'docker build . -t good777lord/imag1.0'
+                sh 'docker build . -t lyday25/imag1.0'
             }
         }
          stage("push image to DockerHub"){
@@ -21,10 +21,10 @@ pipeline{
 
                script {
                   
-                 withCredentials([string(credentialsId: 'docker-hub', variable: 'docker-hub')]) {
-                    sh 'docker login -u good777lord -p ${docker-hub}'
+                 withCredentials([string(credentialsId: 'DockerID', variable: 'DockerID')]) {
+                    sh 'docker login -u lyday25 -p ${DockerID}'
             }
-              sh 'docker push good777lord/imag1.0:latest'
+              sh 'docker push lyday25/imag1.0:latest'
             }
         }
     }
