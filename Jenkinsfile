@@ -1,6 +1,14 @@
 pipeline{
     agent any
     stages{
+         stage("GitHub checkout") {
+            steps {
+                script {
+ 
+                    git branch: 'main', url: 'https://github.com/clement2019/jenkins-test.git' 
+                }
+            }
+        }
         stage("Build docker on going"){
             steps{
                 sh 'printenv'
