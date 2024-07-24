@@ -18,10 +18,12 @@ pipeline{
         }
          stage("push image to DockerHub"){
             steps{
-                withDockerRegistry([credentialsId: "docker-hub" , url: ""]){
-                     sh 'docker push -t good777lord/imag1.0'
 
-                }
+               script {
+                  
+                 withCredentials([string(credentialsId: 'docker-hub', variable: 'docker-hub')]) {
+                    sh 'docker login -u good777lord -p ${docker-hub}'
+            }
              
             }
         }
